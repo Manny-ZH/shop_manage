@@ -14,7 +14,7 @@ public class LoginController {
     public String login(){
         logger.info("aaa");
         logger.error("bbb");
-        logger.debug("ccc");
+        logger.warn("ccc");
         System.out.println("ddd");
         return "Hello World";
     }
