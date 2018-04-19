@@ -50,32 +50,11 @@ CREATE TABLE `tbl_expend` (
 
 /*Data for the table `tbl_expend` */
 
-/*Table structure for table `tbl_goods` */
+/*Table structure for table `tbl_goods_detial` */
 
-DROP TABLE IF EXISTS `tbl_goods`;
+DROP TABLE IF EXISTS `tbl_goods_detial`;
 
-CREATE TABLE `tbl_goods` (
-  `goods_id` int(5) NOT NULL auto_increment COMMENT '商品表',
-  `goods_name` varchar(32) default '未命名' COMMENT '商品名',
-  `supplier_id` int(5) default NULL COMMENT '厂商id',
-  `type_id` int(5) default NULL COMMENT '种类id',
-  `size_ids` varchar(64) default NULL COMMENT '规格id',
-  `purchase_price` decimal(7,2) default '0.00' COMMENT '进价',
-  `sell_price` decimal(7,2) default '0.00' COMMENT '售价',
-  `picture` varchar(128) default NULL COMMENT '图片',
-  `amount` int(5) default '0' COMMENT '库存数量',
-  `status` tinyint(1) default NULL COMMENT '状态',
-  `remark` varchar(64) default NULL COMMENT '备注',
-  PRIMARY KEY  (`goods_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `tbl_goods` */
-
-/*Table structure for table `tbl_goods_list` */
-
-DROP TABLE IF EXISTS `tbl_goods_list`;
-
-CREATE TABLE `tbl_goods_list` (
+CREATE TABLE `tbl_goods_detial` (
   `id` int(20) NOT NULL auto_increment COMMENT '商品流向一览表',
   `purchase_id` int(5) default NULL COMMENT '订单号',
   `goods_id` int(5) NOT NULL COMMENT '商品id',
@@ -90,7 +69,28 @@ CREATE TABLE `tbl_goods_list` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Data for the table `tbl_goods_list` */
+/*Data for the table `tbl_goods_detial` */
+
+/*Table structure for table `tbl_goods_info` */
+
+DROP TABLE IF EXISTS `tbl_goods_info`;
+
+CREATE TABLE `tbl_goods_info` (
+  `goods_id` int(5) NOT NULL auto_increment COMMENT '商品表',
+  `goods_name` varchar(32) default '未命名' COMMENT '商品名',
+  `supplier_id` int(5) default NULL COMMENT '厂商id',
+  `type_id` int(5) default NULL COMMENT '种类id',
+  `size` varchar(64) default NULL COMMENT '规格id',
+  `purchase_price` decimal(7,2) default '0.00' COMMENT '进价',
+  `sell_price` decimal(7,2) default '0.00' COMMENT '售价',
+  `picture` varchar(128) default NULL COMMENT '图片',
+  `amount` int(5) default '0' COMMENT '库存数量',
+  `status` tinyint(1) default NULL COMMENT '状态',
+  `remark` varchar(64) default NULL COMMENT '备注',
+  PRIMARY KEY  (`goods_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `tbl_goods_info` */
 
 /*Table structure for table `tbl_income` */
 
@@ -147,7 +147,7 @@ CREATE TABLE `tbl_shopinfo` (
   `shop_id` int(5) NOT NULL auto_increment COMMENT '商店信息',
   `shop_name` varchar(32) default '未命名' COMMENT '商店名',
   `telephone` varchar(14) default NULL COMMENT '联系电话',
-  `shopkeeper` varchar(32) default '未命名' COMMENT '店长',
+  `shop_keeper` varchar(32) default '未命名' COMMENT '店长',
   `manager` varchar(32) default '未命名' COMMENT '经理',
   `phone` varchar(14) default NULL COMMENT '手机号',
   `shop_photo1` varchar(128) default NULL COMMENT '图片1',
@@ -170,7 +170,6 @@ DROP TABLE IF EXISTS `tbl_size`;
 CREATE TABLE `tbl_size` (
   `size_id` int(5) NOT NULL auto_increment COMMENT '商品规格表',
   `size_name` varchar(32) default '未命名' COMMENT '规格名',
-  `size_value` varchar(32) default '未命名' COMMENT '规格值',
   `parent_id` int(5) default '0' COMMENT '所属父规格',
   `status` tinyint(1) default NULL COMMENT '状态码',
   `remark` varchar(64) default NULL COMMENT '备注',

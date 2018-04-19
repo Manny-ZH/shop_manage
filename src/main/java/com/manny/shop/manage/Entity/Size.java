@@ -1,40 +1,68 @@
-package com.manny.shop.manage.dao;
+package com.manny.shop.manage.Entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+/**
+ * @Author: manny
+ * @Description: 商品规格信息表
+ * @Date: 2018/4/19 14:16
+ */
+public class Size implements Serializable{
 
-public class TblSize implements Serializable{
+    private static final long serialVersionUID = -6412190280826243584L;
 
+    //规格id
     private int sizeId;
 
+    //规格名
     private String sizeName;
 
-    private String sizeVale;
-
+    //所属父规格
     private int parentId;
 
+    //使用状态
     private int status;
 
+    //备注
     private String remark;
-    
-    public TblSize() {
+
+    //子规格
+    private List<Size> sizeList;
+
+    public Size() {
     }
 
-    public TblSize(String sizeName, String sizeVale, int parentId, int status, String remark) {
+    public Size(String sizeName, int parentId, int status, String remark) {
         this.sizeName = sizeName;
-        this.sizeVale = sizeVale;
         this.parentId = parentId;
         this.status = status;
         this.remark = remark;
     }
 
-    public TblSize(int sizeId, String sizeName, String sizeVale, int parentId, int status, String remark) {
+    public Size(String sizeName, int parentId, int status, String remark, List<Size> sizeList) {
+        this.sizeName = sizeName;
+        this.parentId = parentId;
+        this.status = status;
+        this.remark = remark;
+        this.sizeList = sizeList;
+    }
+
+    public Size(int sizeId, String sizeName, int parentId, int status, String remark) {
         this.sizeId = sizeId;
         this.sizeName = sizeName;
-        this.sizeVale = sizeVale;
         this.parentId = parentId;
         this.status = status;
         this.remark = remark;
+    }
+
+    public Size(int sizeId, String sizeName, int parentId, int status, String remark, List<Size> sizeList) {
+        this.sizeId = sizeId;
+        this.sizeName = sizeName;
+        this.parentId = parentId;
+        this.status = status;
+        this.remark = remark;
+        this.sizeList = sizeList;
     }
 
     public int getSizeId() {
@@ -51,14 +79,6 @@ public class TblSize implements Serializable{
 
     public void setSizeName(String sizeName) {
         this.sizeName = sizeName;
-    }
-
-    public String getSizeVale() {
-        return sizeVale;
-    }
-
-    public void setSizeVale(String sizeVale) {
-        this.sizeVale = sizeVale;
     }
 
     public int getParentId() {
@@ -85,15 +105,23 @@ public class TblSize implements Serializable{
         this.remark = remark;
     }
 
+    public List<Size> getSizeList() {
+        return sizeList;
+    }
+
+    public void setSizeList(List<Size> sizeList) {
+        this.sizeList = sizeList;
+    }
+
     @Override
     public String toString() {
-        return "TblSize{" +
+        return "Size{" +
                 "sizeId=" + sizeId +
                 ", sizeName='" + sizeName + '\'' +
-                ", sizeVale='" + sizeVale + '\'' +
                 ", parentId=" + parentId +
                 ", status=" + status +
                 ", remark='" + remark + '\'' +
+                ", sizeList=" + sizeList +
                 '}';
     }
 }
