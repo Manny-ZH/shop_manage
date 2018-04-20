@@ -1,4 +1,4 @@
-package com.manny.shop.manage.Entity;
+package com.manny.shop.manage.entity;
 
 import java.io.Serializable;
 
