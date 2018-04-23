@@ -24,8 +24,10 @@ public class Type implements Serializable{
     //备注
     private String remark;
 
+
     //拥有规格
     private List<Size> sizeList;
+
 
     public Type() {
     }

@@ -1,6 +1,7 @@
 package com.manny.shop.manage.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -12,14 +13,14 @@ public class Income implements Serializable {
 
     private static final long serialVersionUID = 8431363539707917502L;
 
-    //收入id
+    //收入自增主键id
     private int incomeId;
 
     //收入时间
     private Date date;
 
     //收入金额
-    private double amount;
+    private BigDecimal amount;
 
     //备注
     private String remark;
@@ -27,7 +28,7 @@ public class Income implements Serializable {
     public Income() {
     }
 
-    public Income(int incomeId, Date date, double amount, String remark) {
+    public Income(int incomeId, Date date, BigDecimal amount, String remark) {
         this.incomeId = incomeId;
         this.date = date;
         this.amount = amount;
@@ -50,11 +51,11 @@ public class Income implements Serializable {
         this.date = date;
     }
 
-    public double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

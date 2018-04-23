@@ -27,8 +27,10 @@ public class Size implements Serializable{
     //备注
     private String remark;
 
+
     //子规格
     private List<Size> sizeList;
+
 
     public Size() {
     }

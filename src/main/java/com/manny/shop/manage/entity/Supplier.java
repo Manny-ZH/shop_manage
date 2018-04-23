@@ -45,8 +45,10 @@ public class Supplier implements Serializable{
     //备注
     private String remark;
 
+
     //售出商品种类
     private List<Type> typeList;
+
 
     public Supplier() {
     }

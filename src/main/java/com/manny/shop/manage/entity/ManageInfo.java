@@ -1,6 +1,7 @@
 package com.manny.shop.manage.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -19,21 +20,21 @@ public class ManageInfo implements Serializable {
     private Date date;
 
     //进货总金额
-    private double purchaseMoney;
+    private BigDecimal purchaseMoney;
 
     //售货总金额
-    private double sellMoney;
+    private BigDecimal sellMoney;
 
     //总支出
-    private double expendMoney;
+    private BigDecimal expendMoney;
 
     //总收入
-    private double incomeMoney;
+    private BigDecimal incomeMoney;
 
     public ManageInfo() {
     }
 
-    public ManageInfo(Date date, double purchaseMoney, double sellMoney, double expendMoney, double incomeMoney) {
+    public ManageInfo(Date date, BigDecimal purchaseMoney, BigDecimal sellMoney, BigDecimal expendMoney, BigDecimal incomeMoney) {
         this.date = date;
         this.purchaseMoney = purchaseMoney;
         this.sellMoney = sellMoney;
@@ -41,7 +42,7 @@ public class ManageInfo implements Serializable {
         this.incomeMoney = incomeMoney;
     }
 
-    public ManageInfo(int id, Date date, double purchaseMoney, double sellMoney, double expendMoney, double incomeMoney) {
+    public ManageInfo(int id, Date date, BigDecimal purchaseMoney, BigDecimal sellMoney, BigDecimal expendMoney, BigDecimal incomeMoney) {
         this.id = id;
         this.date = date;
         this.purchaseMoney = purchaseMoney;
@@ -66,35 +67,35 @@ public class ManageInfo implements Serializable {
         this.date = date;
     }
 
-    public double getPurchaseMoney() {
+    public BigDecimal getPurchaseMoney() {
         return purchaseMoney;
     }
 
-    public void setPurchaseMoney(double purchaseMoney) {
+    public void setPurchaseMoney(BigDecimal purchaseMoney) {
         this.purchaseMoney = purchaseMoney;
     }
 
-    public double getSellMoney() {
+    public BigDecimal getSellMoney() {
         return sellMoney;
     }
 
-    public void setSellMoney(double sellMoney) {
+    public void setSellMoney(BigDecimal sellMoney) {
         this.sellMoney = sellMoney;
     }
 
-    public double getExpendMoney() {
+    public BigDecimal getExpendMoney() {
         return expendMoney;
     }
 
-    public void setExpendMoney(double expendMoney) {
+    public void setExpendMoney(BigDecimal expendMoney) {
         this.expendMoney = expendMoney;
     }
 
-    public double getIncomeMoney() {
+    public BigDecimal getIncomeMoney() {
         return incomeMoney;
     }
 
-    public void setIncomeMoney(double incomeMoney) {
+    public void setIncomeMoney(BigDecimal incomeMoney) {
         this.incomeMoney = incomeMoney;
     }
 

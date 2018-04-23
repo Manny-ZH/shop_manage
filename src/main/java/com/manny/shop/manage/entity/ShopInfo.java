@@ -1,6 +1,7 @@
 package com.manny.shop.manage.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * @Author: manny
@@ -39,24 +40,24 @@ public class ShopInfo implements Serializable {
     private String shopPhoto3;
 
     //资产
-    private double property;
+    private BigDecimal property;
 
     //总收入
-    private double income;
+    private BigDecimal income;
 
     //总支出
-    private double expend;
+    private BigDecimal expend;
 
     //预计盈利
-    private double preProfit;
+    private BigDecimal preProfit;
 
     //
-    private double profit;
+    private BigDecimal profit;
 
     public ShopInfo() {
     }
 
-    public ShopInfo(String shopName, String telephone, String shopKeeper, String manager, String phone, String shopPhoto1, String shopPhoto2, String shopPhoto3, double property, double income, double expend, double preProfit, double profit) {
+    public ShopInfo(String shopName, String telephone, String shopKeeper, String manager, String phone, String shopPhoto1, String shopPhoto2, String shopPhoto3, BigDecimal property, BigDecimal income, BigDecimal expend, BigDecimal preProfit, BigDecimal profit) {
         this.shopName = shopName;
         this.telephone = telephone;
         this.shopKeeper = shopKeeper;
@@ -72,7 +73,7 @@ public class ShopInfo implements Serializable {
         this.profit = profit;
     }
 
-    public ShopInfo(int shopId, String shopName, String telephone, String shopKeeper, String manager, String phone, String shopPhoto1, String shopPhoto2, String shopPhoto3, double property, double income, double expend, double preProfit, double profit) {
+    public ShopInfo(int shopId, String shopName, String telephone, String shopKeeper, String manager, String phone, String shopPhoto1, String shopPhoto2, String shopPhoto3, BigDecimal property, BigDecimal income, BigDecimal expend, BigDecimal preProfit, BigDecimal profit) {
         this.shopId = shopId;
         this.shopName = shopName;
         this.telephone = telephone;
@@ -161,43 +162,43 @@ public class ShopInfo implements Serializable {
         this.shopPhoto3 = shopPhoto3;
     }
 
-    public double getProperty() {
+    public BigDecimal getProperty() {
         return property;
     }
 
-    public void setProperty(double property) {
+    public void setProperty(BigDecimal property) {
         this.property = property;
     }
 
-    public double getIncome() {
+    public BigDecimal getIncome() {
         return income;
     }
 
-    public void setIncome(double income) {
+    public void setIncome(BigDecimal income) {
         this.income = income;
     }
 
-    public double getExpend() {
+    public BigDecimal getExpend() {
         return expend;
     }
 
-    public void setExpend(double expend) {
+    public void setExpend(BigDecimal expend) {
         this.expend = expend;
     }
 
-    public double getPreProfit() {
+    public BigDecimal getPreProfit() {
         return preProfit;
     }
 
-    public void setPreProfit(double preProfit) {
+    public void setPreProfit(BigDecimal preProfit) {
         this.preProfit = preProfit;
     }
 
-    public double getProfit() {
+    public BigDecimal getProfit() {
         return profit;
     }
 
-    public void setProfit(double profit) {
+    public void setProfit(BigDecimal profit) {
         this.profit = profit;
     }
 

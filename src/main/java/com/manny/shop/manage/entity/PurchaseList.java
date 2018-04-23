@@ -1,6 +1,7 @@
 package com.manny.shop.manage.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -25,21 +26,23 @@ public class PurchaseList implements Serializable{
     private Date date;
 
     //进货金额
-    private double goodsMoney;
+    private BigDecimal goodsMoney;
 
     //运费
-    private double carriage;
+    private BigDecimal carriage;
 
     //备注
     private String remark;
 
+
     //进货商信息
-    private Supplier supplier;
+    private String supplierName;
+
 
     public PurchaseList() {
     }
 
-    public PurchaseList(int supplierId, String purchaseNumber, Date date, double goodsMoney, double carriage, String remark) {
+    public PurchaseList(int supplierId, String purchaseNumber, Date date, BigDecimal goodsMoney, BigDecimal carriage, String remark) {
         this.supplierId = supplierId;
         this.purchaseNumber = purchaseNumber;
         this.date = date;
@@ -48,17 +51,17 @@ public class PurchaseList implements Serializable{
         this.remark = remark;
     }
 
-    public PurchaseList(int supplierId, String purchaseNumber, Date date, double goodsMoney, double carriage, String remark, Supplier supplier) {
+    public PurchaseList(int supplierId, String purchaseNumber, Date date, BigDecimal goodsMoney, BigDecimal carriage, String remark, String supplierName) {
         this.supplierId = supplierId;
         this.purchaseNumber = purchaseNumber;
         this.date = date;
         this.goodsMoney = goodsMoney;
         this.carriage = carriage;
         this.remark = remark;
-        this.supplier = supplier;
+        this.supplierName = supplierName;
     }
 
-    public PurchaseList(int purchaseId, int supplierId, String purchaseNumber, Date date, double goodsMoney, double carriage, String remark) {
+    public PurchaseList(int purchaseId, int supplierId, String purchaseNumber, Date date, BigDecimal goodsMoney, BigDecimal carriage, String remark) {
         this.purchaseId = purchaseId;
         this.supplierId = supplierId;
         this.purchaseNumber = purchaseNumber;
@@ -68,7 +71,7 @@ public class PurchaseList implements Serializable{
         this.remark = remark;
     }
 
-    public PurchaseList(int purchaseId, int supplierId, String purchaseNumber, Date date, double goodsMoney, double carriage, String remark, Supplier supplier) {
+    public PurchaseList(int purchaseId, int supplierId, String purchaseNumber, Date date, BigDecimal goodsMoney, BigDecimal carriage, String remark, String supplierName) {
         this.purchaseId = purchaseId;
         this.supplierId = supplierId;
         this.purchaseNumber = purchaseNumber;
@@ -76,7 +79,7 @@ public class PurchaseList implements Serializable{
         this.goodsMoney = goodsMoney;
         this.carriage = carriage;
         this.remark = remark;
-        this.supplier = supplier;
+        this.supplierName = supplierName;
     }
 
     public int getPurchaseId() {
@@ -111,19 +114,19 @@ public class PurchaseList implements Serializable{
         this.date = date;
     }
 
-    public double getGoodsMoney() {
+    public BigDecimal getGoodsMoney() {
         return goodsMoney;
     }
 
-    public void setGoodsMoney(double goodsMoney) {
+    public void setGoodsMoney(BigDecimal goodsMoney) {
         this.goodsMoney = goodsMoney;
     }
 
-    public double getCarriage() {
+    public BigDecimal getCarriage() {
         return carriage;
     }
 
-    public void setCarriage(double carriage) {
+    public void setCarriage(BigDecimal carriage) {
         this.carriage = carriage;
     }
 
@@ -135,12 +138,12 @@ public class PurchaseList implements Serializable{
         this.remark = remark;
     }
 
-    public Supplier getSupplier() {
-        return supplier;
+    public String getSupplier() {
+        return supplierName;
     }
 
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
+    public void setSupplier(String supplierName) {
+        this.supplierName = supplierName;
     }
 
     @Override
@@ -153,7 +156,7 @@ public class PurchaseList implements Serializable{
                 ", goodsMoney=" + goodsMoney +
                 ", carriage=" + carriage +
                 ", remark='" + remark + '\'' +
-                ", supplier=" + supplier +
+                ", supplierName=" + supplierName +
                 '}';
     }
 }

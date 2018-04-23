@@ -1,6 +1,7 @@
 package com.manny.shop.manage.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -12,14 +13,14 @@ public class Expend implements Serializable {
 
     private static final long serialVersionUID = -6840957082210607277L;
 
-    //支出id
+    //支出自增主键id
     private int expendId;
 
     //支出时间
     private Date date;
 
     //支出金额
-    private double amount;
+    private BigDecimal amount;
 
     //备注
     private String remark;
@@ -27,13 +28,13 @@ public class Expend implements Serializable {
     public Expend() {
     }
 
-    public Expend(Date date, double amount, String remark) {
+    public Expend(Date date, BigDecimal amount, String remark) {
         this.date = date;
         this.amount = amount;
         this.remark = remark;
     }
 
-    public Expend(int expendId, Date date, double amount, String remark) {
+    public Expend(int expendId, Date date, BigDecimal amount, String remark) {
         this.expendId = expendId;
         this.date = date;
         this.amount = amount;
@@ -56,11 +57,11 @@ public class Expend implements Serializable {
         this.date = date;
     }
 
-    public double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 

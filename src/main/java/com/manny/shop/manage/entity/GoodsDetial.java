@@ -1,6 +1,7 @@
 package com.manny.shop.manage.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -15,20 +16,20 @@ public class GoodsDetial implements Serializable{
     //某一件商品分配的id
     private int id;
 
-    //购进订单号
+    //所属购进订单号
     private int purchaseId;
 
     //所属商品id
     private int goodsId;
 
     //购买金额
-    private double purchasePrice;
+    private BigDecimal purchasePrice;
 
     //购买日
     private Date purchaseDate;
 
     //售出金额
-    private double sellPrice;
+    private BigDecimal sellPrice;
 
     //购买人
     private String buyPeople;
@@ -45,16 +46,18 @@ public class GoodsDetial implements Serializable{
     //备注
     private String remark;
 
+
     //订单信息
     private PurchaseList purchaseList;
 
-    //商品信息
-    private GoodsInfo goodsInfo;
+    //商品名
+    private String goodsName;
+
 
     public GoodsDetial() {
     }
 
-    public GoodsDetial(int purchaseId, int goodsId, double purchasePrice, Date purchaseDate, double sellPrice, String buyPeople, Date sellDate, int finallyStatus, Date finallyDate, String remark) {
+    public GoodsDetial(int purchaseId, int goodsId, BigDecimal purchasePrice, Date purchaseDate, BigDecimal sellPrice, String buyPeople, Date sellDate, int finallyStatus, Date finallyDate, String remark) {
         this.purchaseId = purchaseId;
         this.goodsId = goodsId;
         this.purchasePrice = purchasePrice;
@@ -67,7 +70,7 @@ public class GoodsDetial implements Serializable{
         this.remark = remark;
     }
 
-    public GoodsDetial(int purchaseId, int goodsId, double purchasePrice, Date purchaseDate, double sellPrice, String buyPeople, Date sellDate, int finallyStatus, Date finallyDate, String remark, PurchaseList purchaseList, GoodsInfo goodsInfo) {
+    public GoodsDetial(int purchaseId, int goodsId, BigDecimal purchasePrice, Date purchaseDate, BigDecimal sellPrice, String buyPeople, Date sellDate, int finallyStatus, Date finallyDate, String remark, PurchaseList purchaseList, String goodsName) {
         this.purchaseId = purchaseId;
         this.goodsId = goodsId;
         this.purchasePrice = purchasePrice;
@@ -79,10 +82,10 @@ public class GoodsDetial implements Serializable{
         this.finallyDate = finallyDate;
         this.remark = remark;
         this.purchaseList = purchaseList;
-        this.goodsInfo = goodsInfo;
+        this.goodsName = goodsName;
     }
 
-    public GoodsDetial(int id, int purchaseId, int goodsId, double purchasePrice, Date purchaseDate, double sellPrice, String buyPeople, Date sellDate, int finallyStatus, Date finallyDate, String remark) {
+    public GoodsDetial(int id, int purchaseId, int goodsId, BigDecimal purchasePrice, Date purchaseDate, BigDecimal sellPrice, String buyPeople, Date sellDate, int finallyStatus, Date finallyDate, String remark) {
         this.id = id;
         this.purchaseId = purchaseId;
         this.goodsId = goodsId;
@@ -96,7 +99,7 @@ public class GoodsDetial implements Serializable{
         this.remark = remark;
     }
 
-    public GoodsDetial(int id, int purchaseId, int goodsId, double purchasePrice, Date purchaseDate, double sellPrice, String buyPeople, Date sellDate, int finallyStatus, Date finallyDate, String remark, PurchaseList purchaseList, GoodsInfo goodsInfo) {
+    public GoodsDetial(int id, int purchaseId, int goodsId, BigDecimal purchasePrice, Date purchaseDate, BigDecimal sellPrice, String buyPeople, Date sellDate, int finallyStatus, Date finallyDate, String remark, PurchaseList purchaseList, String goodsName) {
         this.id = id;
         this.purchaseId = purchaseId;
         this.goodsId = goodsId;
@@ -109,7 +112,7 @@ public class GoodsDetial implements Serializable{
         this.finallyDate = finallyDate;
         this.remark = remark;
         this.purchaseList = purchaseList;
-        this.goodsInfo = goodsInfo;
+        this.goodsName = goodsName;
     }
 
     public int getId() {
@@ -136,11 +139,11 @@ public class GoodsDetial implements Serializable{
         this.goodsId = goodsId;
     }
 
-    public double getPurchasePrice() {
+    public BigDecimal getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(double purchasePrice) {
+    public void setPurchasePrice(BigDecimal purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
@@ -152,11 +155,11 @@ public class GoodsDetial implements Serializable{
         this.purchaseDate = purchaseDate;
     }
 
-    public double getSellPrice() {
+    public BigDecimal getSellPrice() {
         return sellPrice;
     }
 
-    public void setSellPrice(double sellPrice) {
+    public void setSellPrice(BigDecimal sellPrice) {
         this.sellPrice = sellPrice;
     }
 
@@ -208,12 +211,12 @@ public class GoodsDetial implements Serializable{
         this.purchaseList = purchaseList;
     }
 
-    public GoodsInfo getGoodsInfo() {
-        return goodsInfo;
+    public String getgoodsName() {
+        return goodsName;
     }
 
-    public void setGoodsInfo(GoodsInfo goodsInfo) {
-        this.goodsInfo = goodsInfo;
+    public void setgoodsName(String goodsName) {
+        this.goodsName = goodsName;
     }
 
     @Override
@@ -231,7 +234,7 @@ public class GoodsDetial implements Serializable{
                 ", finallyDate=" + finallyDate +
                 ", remark='" + remark + '\'' +
                 ", purchaseList=" + purchaseList +
-                ", goodsInfo=" + goodsInfo +
+                ", goodsName=" + goodsName +
                 '}';
     }
 }

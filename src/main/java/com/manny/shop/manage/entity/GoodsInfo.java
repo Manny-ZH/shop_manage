@@ -1,6 +1,7 @@
 package com.manny.shop.manage.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * @Author: manny
@@ -27,10 +28,10 @@ public class GoodsInfo implements Serializable {
     private String size;
 
     //市场进价
-    private double purchasePrice;
+    private BigDecimal purchasePrice;
 
     //零售价
-    private double sellPrice;
+    private BigDecimal sellPrice;
 
     //图片
     private String picture;
@@ -44,16 +45,18 @@ public class GoodsInfo implements Serializable {
     //备注
     private String remark;
 
+
     //供应商信息
-    private Supplier supplier;
+    private String supplierName;
 
     //所属种类
-    private Type type;
+    private String typeName;
+
 
     public GoodsInfo() {
     }
 
-    public GoodsInfo(String goodsName, int supplierId, int typeId, String size, double purchasePrice, double sellPrice, String picture, int amount, int status, String remark) {
+    public GoodsInfo(String goodsName, int supplierId, int typeId, String size, BigDecimal purchasePrice, BigDecimal sellPrice, String picture, int amount, int status, String remark) {
         this.goodsName = goodsName;
         this.supplierId = supplierId;
         this.typeId = typeId;
@@ -66,7 +69,7 @@ public class GoodsInfo implements Serializable {
         this.remark = remark;
     }
 
-    public GoodsInfo(String goodsName, int supplierId, int typeId, String size, double purchasePrice, double sellPrice, String picture, int amount, int status, String remark, Supplier supplier, Type type) {
+    public GoodsInfo(String goodsName, int supplierId, int typeId, String size, BigDecimal purchasePrice, BigDecimal sellPrice, String picture, int amount, int status, String remark, String supplierName, String typeName) {
         this.goodsName = goodsName;
         this.supplierId = supplierId;
         this.typeId = typeId;
@@ -77,11 +80,11 @@ public class GoodsInfo implements Serializable {
         this.amount = amount;
         this.status = status;
         this.remark = remark;
-        this.supplier = supplier;
-        this.type = type;
+        this.supplierName = supplierName;
+        this.typeName = typeName;
     }
 
-    public GoodsInfo(int goodsId, String goodsName, int supplierId, int typeId, String size, double purchasePrice, double sellPrice, String picture, int amount, int status, String remark) {
+    public GoodsInfo(int goodsId, String goodsName, int supplierId, int typeId, String size, BigDecimal purchasePrice, BigDecimal sellPrice, String picture, int amount, int status, String remark) {
         this.goodsId = goodsId;
         this.goodsName = goodsName;
         this.supplierId = supplierId;
@@ -95,7 +98,7 @@ public class GoodsInfo implements Serializable {
         this.remark = remark;
     }
 
-    public GoodsInfo(int goodsId, String goodsName, int supplierId, int typeId, String size, double purchasePrice, double sellPrice, String picture, int amount, int status, String remark, Supplier supplier, Type type) {
+    public GoodsInfo(int goodsId, String goodsName, int supplierId, int typeId, String size, BigDecimal purchasePrice, BigDecimal sellPrice, String picture, int amount, int status, String remark, String supplierName, String typeName) {
         this.goodsId = goodsId;
         this.goodsName = goodsName;
         this.supplierId = supplierId;
@@ -107,8 +110,8 @@ public class GoodsInfo implements Serializable {
         this.amount = amount;
         this.status = status;
         this.remark = remark;
-        this.supplier = supplier;
-        this.type = type;
+        this.supplierName = supplierName;
+        this.typeName = typeName;
     }
 
     public int getGoodsId() {
@@ -127,11 +130,11 @@ public class GoodsInfo implements Serializable {
         this.goodsName = goodsName;
     }
 
-    public int getSupplierId() {
+    public int getStringId() {
         return supplierId;
     }
 
-    public void setSupplierId(int supplierId) {
+    public void setStringId(int supplierId) {
         this.supplierId = supplierId;
     }
 
@@ -151,19 +154,19 @@ public class GoodsInfo implements Serializable {
         this.size = size;
     }
 
-    public double getPurchasePrice() {
+    public BigDecimal getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(double purchasePrice) {
+    public void setPurchasePrice(BigDecimal purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
-    public double getSellPrice() {
+    public BigDecimal getSellPrice() {
         return sellPrice;
     }
 
-    public void setSellPrice(double sellPrice) {
+    public void setSellPrice(BigDecimal sellPrice) {
         this.sellPrice = sellPrice;
     }
 
@@ -199,20 +202,20 @@ public class GoodsInfo implements Serializable {
         this.remark = remark;
     }
 
-    public Supplier getSupplier() {
-        return supplier;
+    public String getString() {
+        return supplierName;
     }
 
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
+    public void setString(String supplierName) {
+        this.supplierName = supplierName;
     }
 
-    public Type getType() {
-        return type;
+    public String getType() {
+        return typeName;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setType(String typeName) {
+        this.typeName = typeName;
     }
 
     @Override
@@ -229,8 +232,8 @@ public class GoodsInfo implements Serializable {
                 ", amount=" + amount +
                 ", status=" + status +
                 ", remark='" + remark + '\'' +
-                ", supplier=" + supplier +
-                ", type=" + type +
+                ", supplierName=" + supplierName +
+                ", typeName=" + typeName +
                 '}';
     }
 }
